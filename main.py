@@ -1,10 +1,10 @@
 import torch
 import torch.nn as nn
 import wandb
-from models.costumnet import CustomNet
+from models.CustomNet import CustomNet
 from eval import validate
 from train import train
-from data.data_loaders import get_data_loaders
+from data.dataloaders import get_data_loaders
 
 train_loader, val_loader = get_data_loaders(
     data_root="/content/download/tiny-imagenet/tiny-imagenet-200",
@@ -13,7 +13,7 @@ train_loader, val_loader = get_data_loaders(
 
 # 1. Initialize W&B run
 wandb.init(
-    entity="kristian_prendi-politecnico-di-torino",
+    entity="isabela-ioana-politecnico-di-torino",
     project="tiny-imagenet-customnet",
     config={
         "architecture": "CustomNet",
